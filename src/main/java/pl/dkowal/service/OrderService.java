@@ -1,6 +1,6 @@
-package pl.dkowal.service;
-
-public interface OrderService {
-	
-	void processOrder(String  productId, long quantity);
-}
+//package pl.dkowal.service;
+//
+//public interface OrderService {
+//
+//	void processOrder(String  productId, long quantity);
+//}

@@ -13,6 +13,7 @@
 			<div class="container">
 				<h1> ${greeting} </h1>
 				<p> ${tagline} </p>
+				<p><a href="games">Przeglądaj gry</a></p>
 			</div>
 		</div>
 	</section>

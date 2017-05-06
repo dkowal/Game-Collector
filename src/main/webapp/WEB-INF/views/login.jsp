@@ -7,14 +7,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet"	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-<title>Produkty</title>
+<title>Gry</title>
 </head>
 <body>
 	<section>
 		<div class="jumbotron">
 			<div class="container">
-				<h1>Produkty</h1>
-				<p>Dodaj produkty</p>
+				<h1>Gry</h1>
+				<p>Dodaj gry</p>
 			</div>
 		</div>
 	</section>

@@ -7,27 +7,27 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet"	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-<title>Produkty</title>
+<title>Gry</title>
 </head>
 <body>
 	<section>
 		<div class="jumbotron">
 			<div class="container">
-				<h1>Produkty</h1>
-				<p>Dodaj produkty</p>
+				<h1>Gry</h1>
+				<p>Dodaj gry</p>
 			</div>
 			<a href="<c:url value="/j_spring_security_logout" />" class="btn btn-danger btn-mini pull-right">wyloguj</a>	
 		</div>
 	</section>
 	<section class="container">
-		<form:form  modelAttribute="newProduct" class="form-horizontal">
+		<form:form  modelAttribute="newGame" class="form-horizontal">
 			<fieldset>
-				<legend>Dodaj nowy produkt</legend>
+				<legend>Dodaj nową grę</legend>
 
 				<div class="form-group">
-					<label class="control-label col-lg-2 col-lg-2" for="productId"><spring:message code="addProdcut.form.productId.label"/></label>
+					<label class="control-label col-lg-2 col-lg-2" for="gameId"><spring:message code="addGame.form.gameId.label"/></label>
 					<div class="col-lg-10">
-						<form:input id="productId" path="productId" type="text" class="form:input-large"/>
+						<form:input id="gameId" path="gameId" type="text" class="form:input-large"/>
 					</div>
 				</div>
 
@@ -39,10 +39,10 @@
 				</div>
 
 				<div class="form-group">
-					<label class="control-label col-lg-2" for="unitPrice">Cena</label>
+					<label class="control-label col-lg-2" for="buyPrice">Cena</label>
 					<div class="col-lg-10">
 						<div class="form:input-prepend">
-							<form:input id="unitPrice" path="unitPrice" type="text" class="form:input-large"/>
+							<form:input id="buyPrice" path="buyPrice" type="text" class="form:input-large"/>
 						</div>
 					</div>
 				</div>
@@ -62,25 +62,25 @@
 				</div>
 
 				<div class="form-group">
-					<label class="control-label col-lg-2" for="category">Kategoria</label>
+					<label class="control-label col-lg-2" for="status">Status</label>
 					<div class="col-lg-10">
-						<form:input id="category" path="category" type="text" class="form:input-large"/>
+						<form:input id="status" path="status" type="text" class="form:input-large"/>
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label class="control-label col-lg-2" for="unitsInStock">Liczba dostępnych sztuk</label>
+					<label class="control-label col-lg-2" for="playTime">Liczba godzin rozgrywki</label>
 					<div class="col-lg-10">
-						<form:input id="unitsInStock" path="unitsInStock" type="text" class="form:input-large"/>
+						<form:input id="playTime" path="playTime" type="text" class="form:input-large"/>
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label class="control-label col-lg-2" for="condition">Stan</label>
+					<label class="control-label col-lg-2" for="status">Stan</label>
 					<div class="col-lg-10">
-						<form:radiobutton path="condition" value="New" />Nowy 
-						<form:radiobutton path="condition" value="Old" />Używany 
-						<form:radiobutton path="condition" value="Refurbished" />Odnowiony
+						<form:radiobutton path="status" value="Status.NOWA" />Nowa
+						<form:radiobutton path="status" value="Status.DO_SPRZEDANIA" />Do sprzedania
+						<form:radiobutton path="status" value="Status.NIE_DO_SPREDANIA" />Nie na sprzedaż
 					</div>
 				</div>
 				

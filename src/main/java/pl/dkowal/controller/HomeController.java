@@ -9,9 +9,9 @@ public class HomeController {
 
 	@RequestMapping("/")
 	public String welcome(Model model) {
-		model.addAttribute("greeting", "Witaj w sklepie internetowym!");
-		model.addAttribute("tagline", "Wyj�tkowym i jedynym sklepie internetowym");
+		model.addAttribute("greeting", "Witaj na stronie klasera gier!");
+		model.addAttribute("tagline", "Wejdź ze mną w świat gier, które kolekcjonuję");
 		
 		return "welcome";
-	}
+}
 }

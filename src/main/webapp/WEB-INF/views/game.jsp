@@ -7,41 +7,33 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet"
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-<title>Produkty</title>
+<title>Gry</title>
 </head>
 <body>
 	<section>
 		<div class="jumbotron">
 			<div class="container">
-				<h1>Produkty</h1>
+				<h1>Gry</h1>
 			</div>
 		</div>
 	</section>
 	<section class="container">
 		<div class="row">
 			<div class="col-md-5">
-				<h3>${product.name}</h3>
-				<p>${product.description}</p>
+				<h3>${game.name}</h3>
+				<p>${game.description}</p>
 				<p>
-					<strong>Kod produktu: </strong><span class="label label-warning">${product.productId}</span>
+					<strong>Kod gry: </strong><span class="label label-warning">${game.gameId}</span>
 				</p>
 				<p>
-					<strong>Producent</strong>: ${product.manufacturer}
+					<strong>Producent</strong>: ${game.manufacturer}
 				</p>
 				<p>
-					<strong>Kategoria</strong>: ${product.category}
+					<strong>Status</strong>: ${game.status}
 				</p>
+				<h4>${game.buyPrice} PLN</h4>
 				<p>
-					<strong>Stan</strong>: ${product.condition}
-				</p>
-				<p>
-					<strong>Liczba sztuk w magazynie</strong>: ${product.unitsInStock}
-				</p>
-				<h4>${product.unitPrice} PLN</h4>
-				<p>
-					<a href="#" class="btn btn-warning btn-large"> <span
-						class="glyphicon-shopping-cart glyphicon"></span> Zamów teraz
-					</a> <a href="<spring:url value="/products" />" class="btn btn-default">
+					<a href="<spring:url value="/games" />" class="btn btn-default">
 						<span class="glyphicon-hand-left glyphicon"></span> wstecz
 					</a>
 
