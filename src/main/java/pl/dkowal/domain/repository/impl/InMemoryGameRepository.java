@@ -1,11 +1,12 @@
 package pl.dkowal.domain.repository.impl;
 
-import java.math.BigDecimal;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import org.springframework.stereotype.Repository;
 
-import pl.dkowal.domain.Game;
 import pl.dkowal.domain.Game;
 import pl.dkowal.domain.Status;
 import pl.dkowal.domain.repository.GameRepository;
@@ -15,9 +16,14 @@ public class InMemoryGameRepository implements GameRepository {
 	
 	private List<Game> listOfGames = new ArrayList<Game>();
 	
-	public InMemoryGameRepository() {
-		Game gam = new Game("1", "Gra 1", 120,
-				"Opis", new Date(), 130, Status.NOWA, "Piranha Bythes");
+	public InMemoryGameRepository() throws ParseException {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date data1 = dateFormat.parse("2001/03/15 00:00:00");
+        System.out.println(data1);
+
+		Game gam = new Game("GTHC1", "Gra Gothic I", 120,
+				"Akcja gry przenosi graczy do fantastycznego Królestwa Myrtany, którym rzadzi król Rhobar II. Wcielajac sie w postac Bezimienngo trafiaja oni do kolonii karnej na wyspie Khorinis. Otacza ja magiczna, przenikalna jedynie z zewnatrz bariera, która stworzyli arcymagowie. Niestety, w trakcie inkantacji wydarzylo sie cos niespodziewanego. Zasieg zaklecia okazal sie wiekszy niz przewidywano i bariera otoczyla caly obszar Górniczej Doliny, wiezac takze magów.",
+                data1, new Date(), 130, Status.NOWA, "Piranha Bytes");
 		listOfGames.add(gam);
 	}
 

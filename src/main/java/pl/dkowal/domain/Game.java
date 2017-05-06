@@ -8,6 +8,7 @@ public class Game {
     private String name;
     private double buyPrice;
     private String description;
+    private Date dateOfPremiere;
     private Date dateOfPurchase;
     private long playTime;
     private Status status;
@@ -17,15 +18,24 @@ public class Game {
         super();
     }
 
-    public Game(String gameId, String name, double buyPrice, String description, Date dateOfPurchase, long playTime, Status status, String manufacturer) {
+    public Game(String gameId, String name, double buyPrice, String description, Date dateOfPremiere, Date dateOfPurchase, long playTime, Status status, String manufacturer) {
         this.gameId = gameId;
         this.name = name;
         this.buyPrice = buyPrice;
         this.description = description;
+        this.dateOfPremiere = dateOfPremiere;
         this.dateOfPurchase = dateOfPurchase;
         this.playTime = playTime;
         this.status = status;
         this.manufacturer = manufacturer;
+    }
+
+    public Date getDateOfPremiere() {
+        return dateOfPremiere;
+    }
+
+    public void setDateOfPremiere(Date dateOfPremiere) {
+        this.dateOfPremiere = dateOfPremiere;
     }
 
     public String getManufacturer() {
