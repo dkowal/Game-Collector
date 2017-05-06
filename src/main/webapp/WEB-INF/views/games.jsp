@@ -13,6 +13,9 @@
 	<section>
 		<div class="jumbotron">
 			<div class="container">
+				<span style="float: right">
+					<a href="/games/add">Dodaj grę</a>
+				</span>
 				<h1>Gry</h1>
 				<p>Wszystkie gry, które posiadam</p>
 			</div>

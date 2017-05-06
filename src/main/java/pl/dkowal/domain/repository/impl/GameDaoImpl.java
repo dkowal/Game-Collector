@@ -1,22 +1,26 @@
 package pl.dkowal.domain.repository.impl;
 
+import java.sql.*;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.Date;
 
 import org.springframework.stereotype.Repository;
 
 import pl.dkowal.domain.Game;
 import pl.dkowal.domain.Status;
-import pl.dkowal.domain.repository.GameRepository;
+import pl.dkowal.domain.repository.GameDao;
 
 @Repository
-public class InMemoryGameRepository implements GameRepository {
-	
+public class GameDaoImpl implements GameDao {
+
+
 	private List<Game> listOfGames = new ArrayList<Game>();
+
 	
-	public InMemoryGameRepository() throws ParseException {
+	public GameDaoImpl() throws ParseException, SQLException {
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date data1 = dateFormat.parse("2001/03/15 00:00:00");
         System.out.println(data1);

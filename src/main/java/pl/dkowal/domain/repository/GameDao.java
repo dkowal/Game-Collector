@@ -6,7 +6,7 @@ import java.util.Set;
 
 import pl.dkowal.domain.Game;
 
-public interface GameRepository {
+public interface GameDao {
 
 	List <Game> getAllGames();
 	

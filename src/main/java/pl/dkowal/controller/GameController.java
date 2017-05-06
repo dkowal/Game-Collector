@@ -72,6 +72,7 @@ public class GameController {
 	   	gameService.addGame(gameToBeAdded);
 		return "redirect:/games";
 	}
+
 //
 //	@InitBinder
 //	public void initialiseBinder(WebDataBinder binder) {

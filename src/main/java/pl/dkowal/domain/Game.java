@@ -1,21 +1,32 @@
 package pl.dkowal.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Date;
-
+//@Entity
 public class Game {
 
+ //   @Id
     private String gameId;
+   // @Column
     private String name;
+   // @Column
     private double buyPrice;
+   // @Column
     private String description;
+   // @Column
     private Date dateOfPremiere;
+   // @Column
     private Date dateOfPurchase;
+   // @Column
     private long playTime;
+   // @Column
     private Status status;
+   // @Column
     private String manufacturer;
 
     public Game() {
-        super();
     }
 
     public Game(String gameId, String name, double buyPrice, String description, Date dateOfPremiere, Date dateOfPurchase, long playTime, Status status, String manufacturer) {
