@@ -21,8 +21,8 @@ public class InMemoryGameRepository implements GameRepository {
         Date data1 = dateFormat.parse("2001/03/15 00:00:00");
         System.out.println(data1);
 
-		Game gam = new Game("GTHC1", "Gra Gothic I", 120,
-				"Akcja gry przenosi graczy do fantastycznego Królestwa Myrtany, którym rzadzi król Rhobar II. Wcielajac sie w postac Bezimienngo trafiaja oni do kolonii karnej na wyspie Khorinis. Otacza ja magiczna, przenikalna jedynie z zewnatrz bariera, która stworzyli arcymagowie. Niestety, w trakcie inkantacji wydarzylo sie cos niespodziewanego. Zasieg zaklecia okazal sie wiekszy niz przewidywano i bariera otoczyla caly obszar Górniczej Doliny, wiezac takze magów.",
+		Game gam = new Game("1", "Gra Gothic I", 120,
+				"Akcja gry przenosi graczy do fantastycznego Krolestwa Myrtany, ktorym rzadzi krol Rhobar II. Wcielajac sie w postac Bezimienngo trafiaja oni do kolonii karnej na wyspie Khorinis. Otacza ja magiczna, przenikalna jedynie z zewnatrz bariera, ktora stworzyli arcymagowie. Niestety, w trakcie inkantacji wydarzylo sie cos niespodziewanego. Zasieg zaklecia okazal sie wiekszy niz przewidywano i bariera otoczyla caly obszar Gorniczej Doliny, wiezac takze magow.",
                 data1, new Date(), 130, Status.NOWA, "Piranha Bytes");
 		listOfGames.add(gam);
 	}

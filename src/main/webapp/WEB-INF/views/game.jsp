@@ -24,10 +24,7 @@
 				<h3>${game.name}</h3>
 				<p>${game.description}</p>
 				<p>
-					<strong>Kod gry: </strong><span class="label label-warning">${game.gameId}</span>
-				</p>
-				<p>
-					<strong>Producent</strong>: ${game.manufacturer}
+					<strong>Producent</strong>: <span class="label label-warning">${game.manufacturer}</span>
 				</p>
 				<p>
 					<strong>Status</strong>: ${game.status}
