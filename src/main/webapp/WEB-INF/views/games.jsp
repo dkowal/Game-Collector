@@ -23,14 +23,14 @@
 	</section>
 
 	<section class="container">
-		<div class="row">
+		<div class="row" >
 			<c:forEach items="${games}" var="game">
 				<div class="col-sm-6 col-md-3" style="padding-bottom: 15px">
 					<div class="thumbnail">
 						<img src="<c:url value="/resources/images/${game.gameId}.jpg"></c:url>" alt="image"  style = "width:100%"/>
 						<div class="caption">
 							<h3>${game.name}</h3>
-							<p>${game.description}</p>
+							<p>${game.shortDescription}</p>
 							<p>${game.buyPrice} PLN</p>
 							<p>Status: ${game.status}</p>
 							<p>

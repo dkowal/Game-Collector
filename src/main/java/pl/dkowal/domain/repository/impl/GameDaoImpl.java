@@ -23,12 +23,37 @@ public class GameDaoImpl implements GameDao {
 	public GameDaoImpl() throws ParseException, SQLException {
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date data1 = dateFormat.parse("2001/03/15 00:00:00");
-        System.out.println(data1);
 
-		Game gam = new Game("1", "Gra Gothic I", 120,
+		Game gam0 = new Game("1", "Gothic I", 120, "Akcja gry przenosi graczy do fantastycznego Krolestwa Myrtany, ktorym rzadzi król...",
 				"Akcja gry przenosi graczy do fantastycznego Krolestwa Myrtany, ktorym rzadzi krol Rhobar II. Wcielajac sie w postac Bezimienngo trafiaja oni do kolonii karnej na wyspie Khorinis. Otacza ja magiczna, przenikalna jedynie z zewnatrz bariera, ktora stworzyli arcymagowie. Niestety, w trakcie inkantacji wydarzylo sie cos niespodziewanego. Zasieg zaklecia okazal sie wiekszy niz przewidywano i bariera otoczyla caly obszar Gorniczej Doliny, wiezac takze magow.",
-                data1, new Date(), 130, Status.NOWA, "Piranha Bytes");
-		listOfGames.add(gam);
+                data1, data1, 130, Status.NIE_DO_SPREDANIA, "Piranha Bytes");
+		listOfGames.add(gam0);
+
+		data1 = dateFormat.parse("2002/11/29 00:00:00");
+
+		Game gam1 = new Game("2", "Gothic II", 120, "Podobnie jak w części poprzedniej akcja Gothic II toczy się w świecie fantasy i ...",
+				"Podobnie jak w części poprzedniej akcja Gothic II toczy się w świecie fantasy i kontynuuje fabułę poprzedniczki, tj. wojny pomiędzy siłami zła (cała masa potworów, Orków i Ogrów pod przewodnictwem Smoków) i Ludźmi. Jednak tym razem nie poruszamy się już tylko wewnątrz kolonii przestępców objętej zasięgiem magicznej bariery, a na jej zewnątrz. Akcja toczy się w nowych bardzo rozległych i różnorodnych lokacjach, m.in. miasteczko nadmorskie, klasztor, biblioteka, farma, Wyspa Smoków, zamek oblężony przez Orki.",
+				data1, data1, 150, Status.NIE_DO_SPREDANIA, "Piranha Bytes");
+		listOfGames.add(gam1);
+		data1 = dateFormat.parse("2006/03/20 00:00:00");
+
+		Game gam2 = new Game("3", "TES IV: Oblivion", 120, "Akcja toczy się w prowincji Cyrodill, należącej do dobrze znanego graczom...",
+				"Akcja toczy się w prowincji Cyrodill, należącej do dobrze znanego graczom cesarstwa Tamriel. Po przedwczesnej śmierci z rąk skrytobójców dotychczasowego władcy krainy, Uriela Septima VII, zadaniem głównego bohatera jest odnalezienie prawowitego następcy tronu i skłonienie go do objęcia władzy nad Tamriel.",
+				data1, data1, 120, Status.DO_SPRZEDANIA, "Bethesda Softworks");
+		listOfGames.add(gam2);
+		data1 = dateFormat.parse("2001/03/15 00:00:00");
+
+		Game gam3 = new Game("4", "Stronghold II: Krzyżowiec", 120, "Akcja gry przeniesiona została na Bliski Wschód, w czasy wypraw...",
+				"Akcja gry przeniesiona została na Bliski Wschód, w czasy wypraw krzyżowych. Zadanie gracza polega na wznoszeniu i rozbudowie twierdz, zaspokajaniu potrzeb mieszkańców, rekrutacji armii, a wreszcie pokonaniu przeciwników..",
+				data1, data1, 80, Status.NIE_DO_SPREDANIA, "FireFly");
+		listOfGames.add(gam3);
+
+		data1 = dateFormat.parse("2011/11/11 00:00:00");
+		Date data2 = dateFormat.parse("2017/04/20 00:00:00");
+		Game gam4 = new Game("5", "TES V: Skyrim", 120, "Akcja Skyrim osadzona została 200 lat po wydarzeniach przedstawionych w TES...",
+				"Akcja The Elder Scrolls V: Skyrim osadzona została 200 lat po wydarzeniach przedstawionych w The Elder Scrolls IV: Oblivion. Główny bohater jest jednym z ostatnich łowców smoków (dovahkiin). Tymczasem wypełnia się proroctwo, zwiastujące przybycie boga zniszczenia - Alduina, który przyjmie postać jednego z tych mitycznych stworzeń.",
+				data1, data1, 80, Status.NOWA, "Bethesda Softworks");
+		listOfGames.add(gam4);
 	}
 
 	public List<Game> getAllGames() {

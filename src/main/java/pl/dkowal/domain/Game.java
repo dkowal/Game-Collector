@@ -1,8 +1,6 @@
 package pl.dkowal.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+
 import java.util.Date;
 //@Entity
 public class Game {
@@ -13,6 +11,7 @@ public class Game {
     private String name;
    // @Column
     private double buyPrice;
+    private String shortDescription;
    // @Column
     private String description;
    // @Column
@@ -29,16 +28,25 @@ public class Game {
     public Game() {
     }
 
-    public Game(String gameId, String name, double buyPrice, String description, Date dateOfPremiere, Date dateOfPurchase, long playTime, Status status, String manufacturer) {
+    public Game(String gameId, String name, double buyPrice,String shortDescription, String description, Date dateOfPremiere, Date dateOfPurchase, long playTime, Status status, String manufacturer) {
         this.gameId = gameId;
         this.name = name;
         this.buyPrice = buyPrice;
+        this.shortDescription = shortDescription;
         this.description = description;
         this.dateOfPremiere = dateOfPremiere;
         this.dateOfPurchase = dateOfPurchase;
         this.playTime = playTime;
         this.status = status;
         this.manufacturer = manufacturer;
+    }
+
+    public String getShortDescription() {
+        return shortDescription;
+    }
+
+    public void setShortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
     }
 
     public Date getDateOfPremiere() {
@@ -153,6 +161,7 @@ public class Game {
                 "gameId='" + gameId + '\'' +
                 ", name='" + name + '\'' +
                 ", buyPrice=" + buyPrice +
+                ", shortDescription" + shortDescription +
                 ", description='" + description + '\'' +
                 ", dateOfPurchase=" + dateOfPurchase +
                 ", playTime=" + playTime +

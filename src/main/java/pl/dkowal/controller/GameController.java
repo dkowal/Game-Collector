@@ -36,7 +36,7 @@ public class GameController {
 	}
 	
 	@RequestMapping("/all")
-	public ModelAndView allProducts() {
+	public ModelAndView allGames() {
 		ModelAndView modelAndView = new ModelAndView();
 
 		modelAndView.addObject("games", gameService.getAllGames());
