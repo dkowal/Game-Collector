@@ -31,7 +31,7 @@
 							<p>Status: ${game.status}</p>
 							<p>
 								<a
-									href=" <spring:url value="/game/game?id=${game.gameId}" /> "
+									href=" <spring:url value="/games/game?id=${game.gameId}" /> "
 									class="btn btn-primary"> <span
 									class="glyphicon-info-sign glyphicon" /></span> Szczegóły
 								</a>
