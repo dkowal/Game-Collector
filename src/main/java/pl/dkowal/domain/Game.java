@@ -1,34 +1,46 @@
 package pl.dkowal.domain;
 
 
+import org.springframework.web.multipart.MultipartFile;
+
 import java.util.Date;
+
 //@Entity
 public class Game {
 
- //   @Id
+    //   @Id
     private String gameId;
-   // @Column
+    // @Column
     private String name;
-   // @Column
+    // @Column
     private double buyPrice;
     private String shortDescription;
-   // @Column
+    // @Column
     private String description;
-   // @Column
+    // @Column
     private Date dateOfPremiere;
-   // @Column
+    // @Column
     private Date dateOfPurchase;
-   // @Column
+    // @Column
     private long playTime;
-   // @Column
+    // @Column
     private Status status;
-   // @Column
+    // @Column
     private String manufacturer;
+    private MultipartFile gameImage;
 
     public Game() {
     }
 
-    public Game(String gameId, String name, double buyPrice,String shortDescription, String description, Date dateOfPremiere, Date dateOfPurchase, long playTime, Status status, String manufacturer) {
+    public MultipartFile getGameImage() {
+        return gameImage;
+    }
+
+    public void setGameImage(MultipartFile gameImage) {
+        this.gameImage = gameImage;
+    }
+
+    public Game(String gameId, String name, double buyPrice, String shortDescription, String description, Date dateOfPremiere, Date dateOfPurchase, long playTime, Status status, String manufacturer) {
         this.gameId = gameId;
         this.name = name;
         this.buyPrice = buyPrice;

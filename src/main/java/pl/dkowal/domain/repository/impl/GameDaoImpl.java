@@ -18,9 +18,28 @@ public class GameDaoImpl implements GameDao {
 
 
 	private List<Game> listOfGames = new ArrayList<Game>();
+//	public void funkcja() throws ClassNotFoundException, SQLException {
+//		Class.forName("org.h2.Driver");
+//		String database = "jdbc:h2:~/test";
+//		Connection conn = DriverManager.getConnection(database, "sa", "sa");
+//
+//		Statement st = conn.createStatement();
+//		ResultSet res = st.executeQuery("SELECT * FROM public.Games");
+//		while (res.next()) {
+//			String id = res.getString(1);
+//			String name = res.getString(2);
+//			String desc = res.getString(3);
+//			System.out.println(id + " " + name + " " + desc);
+//			Game game = new Game(id, name, desc);
+//			listOfGames.add(game);
+//		}
+//		st.close();
+//		conn.close();
+//	}
 
-	
-	public GameDaoImpl() throws ParseException, SQLException {
+	public GameDaoImpl() throws ParseException, SQLException, ClassNotFoundException {
+		//funkcja();
+
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date data1 = dateFormat.parse("2001/03/15 00:00:00");
 

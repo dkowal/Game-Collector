@@ -1,5 +1,6 @@
 package pl.dkowal.controller;
 
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 
@@ -17,10 +18,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import pl.dkowal.domain.Game;
 import pl.dkowal.service.GameService;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("/games")
@@ -62,13 +66,13 @@ public class GameController {
 	}
 	   
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String processAddNewGameForm(@ModelAttribute("newGame") Game gameToBeAdded, ModelMap map, BindingResult result) {
+	public String processAddNewGameForm(@ModelAttribute("newGame") Game gameToBeAdded, ModelMap map, BindingResult result, HttpServletRequest request) {
 		String[] suppressedFields = result.getSuppressedFields();
 		
 		if (suppressedFields.length > 0) {
 			throw new RuntimeException("Próba wiązania niedozwolonych pól: " + StringUtils.arrayToCommaDelimitedString(suppressedFields));
 		}
-		
+
 	   	gameService.addGame(gameToBeAdded);
 		return "redirect:/games";
 	}
