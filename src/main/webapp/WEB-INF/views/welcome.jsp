@@ -17,5 +17,10 @@
 			</div>
 		</div>
 	</section>
+<section>
+	<div>
+		<img src="<c:url value="/resources/images/welcome.png"></c:url>" alt="image"  style = "width:100%"/>
+	</div>
+</section>
 </body>
 </html>
