@@ -11,10 +11,11 @@
 </head>
 <body>
 	<section>
-		<div class="jumbotron">
+		<jsp:include page="header.jsp" />
+		<div class="jumbotron" style="opacity: 0.8">
 			<div class="container">
-				<h1>Gry</h1>
-				<p>Dodaj gry</p>
+				<h1>Kolekcja gier</h1>
+				<p>Zaloguj się</p>
 			</div>
 		</div>
 	</section>

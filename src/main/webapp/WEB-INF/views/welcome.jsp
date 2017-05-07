@@ -1,26 +1,24 @@
-<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-<title>Witaj</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <title>Kolekcja gier - Witaj!</title>
 </head>
 <body>
-	<section>
-		<div class="jumbotron">
-			<div class="container">
-				<h1> ${greeting} </h1>
-				<p> ${tagline} </p>
-				<p><a href="games">Przeglądaj gry</a></p>
-			</div>
-		</div>
-	</section>
 <section>
-	<div>
-		<img src="<c:url value="/resources/images/welcome.png"></c:url>" alt="image"  style = "width:100%"/>
-	</div>
+    <jsp:include page="header.jsp" />
+    <div class="jumbotron" style="opacity: 0.8">
+        <div class="container">
+            <h1> ${greeting} </h1>
+            <p> ${tagline} </p>
+        </div>
+    </div>
 </section>
+<div style="alignment: center">
+
+</div>
 </body>
 </html>

@@ -11,11 +11,9 @@
 </head>
 <body>
 	<section>
-		<div class="jumbotron">
+		<jsp:include page="header.jsp" />
+		<div class="jumbotron" style="opacity: 0.8">
 			<div class="container">
-				<span style="float: right">
-					<a href="/games/add">Dodaj grę</a>
-				</span>
 				<h1>Gry</h1>
 				<p>Wszystkie gry, które posiadam</p>
 			</div>

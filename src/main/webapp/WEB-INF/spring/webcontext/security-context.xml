@@ -13,7 +13,7 @@
 		<security:intercept-url pattern="/games/add" access="ROLE_ADMIN" />
 		
 		<security:form-login login-page="/login" 
-               default-target-url="/games/add"
+               default-target-url="/games"
                authentication-failure-url="/loginfailed"/>
         <security:logout logout-success-url="/logout" />
 	</security:http>
