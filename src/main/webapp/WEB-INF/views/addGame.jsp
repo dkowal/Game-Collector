@@ -12,9 +12,9 @@
 <body>
 	<section>
 		<jsp:include page="header.jsp" />
-		<a href="<c:url value="/j_spring_security_logout" />" class="btn btn-danger btn-mini pull-right">wyloguj</a>
 		<div class="jumbotron" style="opacity: 0.8">
 			<div class="container">
+				<a href="<c:url value="/j_spring_security_logout" />" class="btn btn-danger btn-mini pull-right">wyloguj</a>
 				<h1>Gry</h1>
 				<p>Dodaj gry</p>
 			</div>
