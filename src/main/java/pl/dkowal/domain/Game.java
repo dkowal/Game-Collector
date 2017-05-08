@@ -52,6 +52,11 @@ public class Game {
         this.status = status;
         this.manufacturer = manufacturer;
     }
+    public Game(String gameId, String name, String description) {
+        this.gameId = gameId;
+        this.name = name;
+        this.description = description;
+    }
 
     public String getShortDescription() {
         return shortDescription;

@@ -19,6 +19,7 @@
     <a class="navbar-brand" href="/games">Przeglądaj gry</a>
     <a class="navbar-brand" href="/games/add">Dodaj grę</a>
     <a class="navbar-brand" href="/login">Zaloguj</a>
+    <a class="navbar-brand" href="http://www.github.com/dkowal/game-collector">Kod źródłowy strony © Dawid Kowal 2017</a>
 </nav>
 </body>
 </html>

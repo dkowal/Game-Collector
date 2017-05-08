@@ -18,13 +18,13 @@ public class GameDaoImpl implements GameDao {
 
 
     private List<Game> listOfGames = new ArrayList<Game>();
-//	public void funkcja() throws ClassNotFoundException, SQLException {
-//		Class.forName("org.h2.Driver");
-//		String database = "jdbc:h2:~/test";
-//		Connection conn = DriverManager.getConnection(database, "sa", "sa");
+//	public void databaseConn() throws ClassNotFoundException, SQLException {
+//		Class.forName("org.postgresql.Driver");
+//		String database = "jdbc:postgresql://localhost:5432/GameCollector";
+//		Connection conn = DriverManager.getConnection(database, "postgres", "postgres");
 //
 //		Statement st = conn.createStatement();
-//		ResultSet res = st.executeQuery("SELECT * FROM public.Games");
+//		ResultSet res = st.executeQuery("SELECT * FROM public.\"Games\"");
 //		while (res.next()) {
 //			String id = res.getString(1);
 //			String name = res.getString(2);
@@ -38,7 +38,7 @@ public class GameDaoImpl implements GameDao {
 //	}
 
     public GameDaoImpl() throws ParseException, SQLException, ClassNotFoundException {
-        //funkcja();
+//        databaseConn();
 
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date data1 = dateFormat.parse("2001/03/15 00:00:00");
