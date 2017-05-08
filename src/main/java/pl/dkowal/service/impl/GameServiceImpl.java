@@ -33,4 +33,8 @@ public class GameServiceImpl implements GameService {
     public void addGame(Game game) {
         gameDao.addGame(game);
     }
+
+    public void deleteGame(String gameId) {
+        gameDao.deleteGame(gameId);
+    }
 }

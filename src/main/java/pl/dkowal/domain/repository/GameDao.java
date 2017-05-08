@@ -14,5 +14,8 @@ public interface GameDao {
 
 	Set<Game> getGamesByFilter(Map<String, List<String>> filterParams);
 	
-	void addGame(Game product);
+	void addGame(Game game);
+
+	void deleteGame(String gameId);
+
 }

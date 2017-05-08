@@ -3,7 +3,6 @@ package pl.dkowal.controller;
 import java.io.File;
 import java.util.List;
 import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,58 +28,64 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 @RequestMapping("/games")
 public class GameController {
-	
-	@Autowired
-	private GameService gameService;
 
-	@RequestMapping
-	public String list(Model model) {
-		model.addAttribute("games", gameService.getAllGames());
-		return "games";
-	}
-	
-	@RequestMapping("/all")
-	public ModelAndView allGames() {
-		ModelAndView modelAndView = new ModelAndView();
+    @Autowired
+    private GameService gameService;
 
-		modelAndView.addObject("games", gameService.getAllGames());
-		modelAndView.setViewName("games");
-		return modelAndView;
-	}
-	
-	@RequestMapping("/filter/{ByCriteria}")
-	public String getGamesByFilter(@MatrixVariable(pathVar="ByCriteria") Map<String,List<String>> filterParams, Model model) {
-		model.addAttribute("games", gameService.getGamesByFilter(filterParams));
-		return "games";
-	}
-	
-	@RequestMapping("/game")
-	public String getGameById(@RequestParam("id") String gameId, Model model) {
-		model.addAttribute("game", gameService.getGameById(gameId));
-		return "game";
-	}
-	
-	@RequestMapping(value = "/add", method = RequestMethod.GET)
-	public String getAddNewGameForm(@ModelAttribute("newGame") Game newGame) {
-	   return "addGame";
-	}
-	   
-	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String processAddNewGameForm(@ModelAttribute("newGame") Game gameToBeAdded, ModelMap map, BindingResult result, HttpServletRequest request) {
-		String[] suppressedFields = result.getSuppressedFields();
-		
-		if (suppressedFields.length > 0) {
-			throw new RuntimeException("Próba wiązania niedozwolonych pól: " + StringUtils.arrayToCommaDelimitedString(suppressedFields));
-		}
+    @RequestMapping
+    public String list(Model model) {
+        model.addAttribute("games", gameService.getAllGames());
+        return "games";
+    }
 
-	   	gameService.addGame(gameToBeAdded);
-		return "redirect:/games";
-	}
+    @RequestMapping("/all")
+    public ModelAndView allGames() {
+        ModelAndView modelAndView = new ModelAndView();
 
-//
-//	@InitBinder
-//	public void initialiseBinder(WebDataBinder binder) {
-//		binder.setAllowedFields("gameId","name","unitPrice","description","manufacturer","category","unitsInStock", "condition");
-//	}
+        modelAndView.addObject("games", gameService.getAllGames());
+        modelAndView.setViewName("games");
+        return modelAndView;
+    }
+
+    @RequestMapping("/filter/{ByCriteria}")
+    public String getGamesByFilter(@MatrixVariable(pathVar = "ByCriteria") Map<String, List<String>> filterParams, Model model) {
+        model.addAttribute("games", gameService.getGamesByFilter(filterParams));
+        return "games";
+    }
+
+    @RequestMapping("/game")
+    public String getGameById(@RequestParam("id") String gameId, Model model) {
+        model.addAttribute("game", gameService.getGameById(gameId));
+        return "game";
+    }
+
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
+    public String getAddNewGameForm(@ModelAttribute("newGame") Game newGame) {
+        return "addGame";
+    }
+
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public String processAddNewGameForm(@ModelAttribute("newGame") Game gameToBeAdded, ModelMap map,
+                                        BindingResult result, HttpServletRequest request) {
+
+        MultipartFile gameImage = gameToBeAdded.getGameImage();
+        String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+
+        if (gameImage!=null && !gameImage.isEmpty()) {
+            try {
+                gameImage.transferTo(new File(rootDirectory+"resources\\images\\"+gameToBeAdded.getGameId() + ".jpg"));
+            } catch (Exception e) {
+                throw new RuntimeException("Próba zapisu obrazka zakończona niepowodzeniem", e);
+            }
+        }
+
+        gameService.addGame(gameToBeAdded);
+        return "redirect:/games";
+    }
+    @RequestMapping("/delete/game")
+    public String deleteGameById(@RequestParam("id") String gameId) {
+        gameService.deleteGame(gameId);
+        return "redirect:/games";
+    }
 
 }

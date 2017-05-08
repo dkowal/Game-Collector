@@ -15,4 +15,6 @@ public interface GameService {
 	Set<Game> getGamesByFilter(Map<String, List<String>> filterParams);
 	
 	void addGame(Game Game);
+
+	void deleteGame(String gameId);
 }
