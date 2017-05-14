@@ -41,18 +41,18 @@ public class Game {
     @Column
     //@NotEmpty
     private String manufacturer;
-    private MultipartFile gameImage;
+//    private MultipartFile gameImage;
 
     public Game() {
     }
 
-    public MultipartFile getGameImage() {
-        return gameImage;
-    }
-
-    public void setGameImage(MultipartFile gameImage) {
-        this.gameImage = gameImage;
-    }
+//    public MultipartFile getGameImage() {
+//        return gameImage;
+//    }
+//
+//    public void setGameImage(MultipartFile gameImage) {
+//        this.gameImage = gameImage;
+//    }
 
     public Game(String gameId, String name, double buyPrice, String shortDescription, String description, Date dateOfPremiere, Date dateOfPurchase, long playTime, Status status, String manufacturer) {
         this.gameId = gameId;
