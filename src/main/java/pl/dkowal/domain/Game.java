@@ -1,44 +1,58 @@
 package pl.dkowal.domain;
 
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
-//@Entity
+@Entity
 public class Game {
 
-    //   @Id
+    @Id
     private String gameId;
-    // @Column
+    @Column
+    //@NotEmpty // oprócz nulla na stringu wywołuje się żeby nie był pusty
     private String name;
-    // @Column
+     @Column
     private double buyPrice;
+    //@NotEmpty
+    //@Size(min = 2, max = 80, message = "Krótki opis powinien mieć od {min} do {max} znaków.")
+     @Column
     private String shortDescription;
-    // @Column
+    @Column
+    //@NotEmpty
     private String description;
-    // @Column
+    @Column
+    //@NotNull
     private Date dateOfPremiere;
-    // @Column
+    @Column
+    //@NotNull
     private Date dateOfPurchase;
-    // @Column
+    @Column
     private long playTime;
-    // @Column
+    @Column
     private Status status;
-    // @Column
+    @Column
+    //@NotEmpty
     private String manufacturer;
-    private MultipartFile gameImage;
+//    private MultipartFile gameImage;
 
     public Game() {
     }
 
-    public MultipartFile getGameImage() {
-        return gameImage;
-    }
-
-    public void setGameImage(MultipartFile gameImage) {
-        this.gameImage = gameImage;
-    }
+//    public MultipartFile getGameImage() {
+//        return gameImage;
+//    }
+//
+//    public void setGameImage(MultipartFile gameImage) {
+//        this.gameImage = gameImage;
+//    }
 
     public Game(String gameId, String name, double buyPrice, String shortDescription, String description, Date dateOfPremiere, Date dateOfPurchase, long playTime, Status status, String manufacturer) {
         this.gameId = gameId;

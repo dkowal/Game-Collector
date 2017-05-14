@@ -24,6 +24,7 @@ import pl.dkowal.domain.Game;
 import pl.dkowal.service.GameService;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/games")
@@ -47,11 +48,11 @@ public class GameController {
         return modelAndView;
     }
 
-    @RequestMapping("/filter/{ByCriteria}")
-    public String getGamesByFilter(@MatrixVariable(pathVar = "ByCriteria") Map<String, List<String>> filterParams, Model model) {
-        model.addAttribute("games", gameService.getGamesByFilter(filterParams));
-        return "games";
-    }
+//    @RequestMapping("/filter/{ByCriteria}")
+//    public String getGamesByFilter(@MatrixVariable(pathVar = "ByCriteria") Map<String, List<String>> filterParams, Model model) {
+//        model.addAttribute("games", gameService.getGamesByFilter(filterParams));
+//        return "games";
+//    }
 
     @RequestMapping("/game")
     public String getGameById(@RequestParam("id") String gameId, Model model) {
@@ -68,16 +69,20 @@ public class GameController {
     public String processAddNewGameForm(@ModelAttribute("newGame") Game gameToBeAdded, ModelMap map,
                                         BindingResult result, HttpServletRequest request) {
 
-        MultipartFile gameImage = gameToBeAdded.getGameImage();
-        String rootDirectory = request.getSession().getServletContext().getRealPath("/");
-
-        if (gameImage!=null && !gameImage.isEmpty()) {
-            try {
-                gameImage.transferTo(new File(rootDirectory+"resources\\images\\"+gameToBeAdded.getGameId() + ".jpg"));
-            } catch (Exception e) {
-                throw new RuntimeException("Próba zapisu obrazka zakończona niepowodzeniem", e);
-            }
+        if (result.hasErrors()) {
+            //notifyService //kkoziol
         }
+
+//        MultipartFile gameImage = gameToBeAdded.getGameImage();
+//        String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+//
+//        if (gameImage!=null && !gameImage.isEmpty()) {
+//            try {
+//                gameImage.transferTo(new File(rootDirectory+"resources\\images\\"+gameToBeAdded.getGameId() + ".jpg"));
+//            } catch (Exception e) {
+//                throw new RuntimeException("Próba zapisu obrazka zakończona niepowodzeniem", e);
+//            }
+//        }
 
         gameService.addGame(gameToBeAdded);
         return "redirect:/games";

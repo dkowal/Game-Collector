@@ -22,12 +22,12 @@
 	</section>
 	<section class="container">
 		<div style="width: 900px; background-color: antiquewhite;opacity: 0.8; font-size: medium;margin-left: 150px">
-		<form:form  modelAttribute="newGame" class="form-horizontal" enctype="multipart/form-data">
+		<form:form  modelAttribute="newGame" class="form-horizontal">
 			<fieldset>
 				<legend style="margin-left: 250px">Dodaj nową grę</legend>
 
 				<div class="form-group" style="margin-left: 50px">
-					<label class="control-label col-lg-2 col-lg-2" for="gameId"><spring:message code="addGame.form.gameId.label"/></label>
+					<label class="control-label col-lg-2 col-lg-2" for="gameId">Id</label>
 					<div class="col-lg-10">
 						<form:input id="gameId" path="gameId" type="text" class="form:input-large"/>
 					</div>
@@ -94,7 +94,7 @@
 					</div>
 				</div>
 
-				<div class="form-group">
+<%-- 				<div class="form-group">
 					<label class="control-label col-lg-2" for="gameImage"> <spring:message
 							code="addGame.form.gameImage.label" />
 					</label>
@@ -102,7 +102,7 @@
 						<form:input id="gameImage" path="gameImage" type="file"
 									class="form:input-large" />
 					</div>
-				</div>
+				</div> --%>
 				
 				<div class="form-group">
 					<div class="col-lg-offset-2 col-lg-10">

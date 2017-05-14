@@ -26,19 +26,19 @@
 			<c:forEach items="${games}" var="game">
 				<div class="col-sm-6 col-md-3" style="padding-bottom: 15px">
 					<div class="thumbnail">
-						<img src="<c:url value="/resources/images/${game.gameId}.jpg"></c:url>" alt="image"  style = "width:100%"/>
+						<%-- <img src="<c:url value="/resources/images/${game.gameId}.jpg"></c:url>" alt="image"  style = "width:100%"/> --%>
 						<div class="caption">
 							<h3>${game.name}</h3>
 							<p>${game.shortDescription}</p>
 							<p>${game.buyPrice} PLN</p>
 							<p>Status: ${game.status}</p>
-							<p>
+<!--  							<p>
 								<a
 									href=" <spring:url value="/games/game?id=${game.gameId}" /> "
 									class="btn btn-primary"> <span
 									class="glyphicon-info-sign glyphicon" /></span> Szczegóły
 								</a>
-							</p>
+							</p>-->
 						</div>
 					</div>
 				</div>
