@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <html>
 <head>
@@ -29,7 +30,7 @@
 						<img src="<c:url value="/resources/images/${game.gameId}.jpg"></c:url>" alt="image"  style = "width:100%"/>
 						<div class="caption">
 							<h3>${game.name}</h3>
-							<p>${game.shortDescription}</p>
+							<p>${fn:substring(game.description, 0, 80)}...</p>
 							<p>${game.buyPrice} PLN</p>
 							<p>Status: ${game.status}</p>
   							<p>
