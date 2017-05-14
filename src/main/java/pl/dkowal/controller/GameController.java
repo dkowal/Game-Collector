@@ -73,16 +73,16 @@ public class GameController {
             //notifyService //kkoziol
         }
 
-//        MultipartFile gameImage = gameToBeAdded.getGameImage();
-//        String rootDirectory = request.getSession().getServletContext().getRealPath("/");
-//
-//        if (gameImage!=null && !gameImage.isEmpty()) {
-//            try {
-//                gameImage.transferTo(new File(rootDirectory+"resources\\images\\"+gameToBeAdded.getGameId() + ".jpg"));
-//            } catch (Exception e) {
-//                throw new RuntimeException("Próba zapisu obrazka zakończona niepowodzeniem", e);
-//            }
-//        }
+        MultipartFile gameImage = gameToBeAdded.getGameImage();
+        String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+
+        if (gameImage!=null && !gameImage.isEmpty()) {
+            try {
+                gameImage.transferTo(new File(rootDirectory+"resources\\images\\"+gameToBeAdded.getGameId() + ".jpg"));
+            } catch (Exception e) {
+                throw new RuntimeException("Próba zapisu obrazka zakończona niepowodzeniem", e);
+            }
+        }
 
         gameService.addGame(gameToBeAdded);
         return "redirect:/games";

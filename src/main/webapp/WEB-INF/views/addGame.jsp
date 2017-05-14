@@ -94,7 +94,7 @@
 					</div>
 				</div>
 
-<%-- 				<div class="form-group">
+ 				<div class="form-group">
 					<label class="control-label col-lg-2" for="gameImage"> <spring:message
 							code="addGame.form.gameImage.label" />
 					</label>
@@ -102,7 +102,7 @@
 						<form:input id="gameImage" path="gameImage" type="file"
 									class="form:input-large" />
 					</div>
-				</div> --%>
+				</div>
 				
 				<div class="form-group">
 					<div class="col-lg-offset-2 col-lg-10">
