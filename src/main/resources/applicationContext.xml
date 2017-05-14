@@ -41,7 +41,7 @@
         <property name="jpaProperties">
             <props>
                 <!-- possible values validate | update | create | create-drop -->
-                <prop key="hibernate.hbm2ddl.auto">create</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
             </props>
         </property>
     </bean>
