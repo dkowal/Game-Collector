@@ -8,10 +8,10 @@ Zawiera możliwości:
 * usunięcie gry
 * dodanie gry wraz ze zdjęciem w formacie .jpg
 * dodawanie możliwe po zalogowaniu: Admin/Admin123
+* Połączenie z bazą PostreSQL
 
 Ciąg dalszy zmian i ulepszeń nastąpi w wolnym czasie.
 Najbliższe z nich to:
-* załączenie bazy PostreSQL
 * dołączenie możliwości edycji gry
 * walidacja formularzy
 * sesja logowania
