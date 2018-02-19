@@ -1,6 +1,5 @@
 # Game Collector
-Aplikacja stworzona na potrzeby kursu kodołamacz.pl
-Jest to klaser gier komputerowych zgromadzonych przez użytkownika. 
+To klaser gier komputerowych zgromadzonych przez użytkownika. 
 
 Zawiera możliwości:
 * przeglądu gier
@@ -10,11 +9,7 @@ Zawiera możliwości:
 * dodawanie możliwe po zalogowaniu: Admin/Admin123
 * Połączenie z bazą PostreSQL
 
-Ciąg dalszy zmian i ulepszeń nastąpi w wolnym czasie.
-Najbliższe z nich to:
-* dołączenie możliwości edycji gry
-* walidacja formularzy
-* sesja logowania
-* przeniesienie danych wrażliwych do ukrytych folderów
+Deploy na heroku.com:
+https://game-collector.herokuapp.com/
 
 Copyright © Dawid Kowal 2017
